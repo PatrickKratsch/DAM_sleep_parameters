@@ -22,7 +22,7 @@ To install these packages, and any other, type ````install.packages("<packagenam
 
 Once the working directory in RStudio contains the contents of DAM_sleep_parameters, the analysis of DAM raw output data can begin. First, run the raw data from the DAM through DAM FileScan; The output files from this need to be copied into the RStudio working directory. Second, source analysR.R by ````source("analysR.R")````. Third, run analysR with the name of the raw DAM FileScan output file as the first argument, and the length of the experiment in minutes as the second argument (the default experiment duration is 1440 min, i.e. one day). Store the output of analysR in a variable. Lastly, use this variable as input to DAM_sleep_parameters, and write the output as an Excel file into the working directory.
 
-## analysR.R
+## DAM_analysR.R
 
 `analysR.R` is the base function used to work through the DAM FileScan output. Its first input is the DAM FileScan output, which is a text file (don't forget quotation marks and file extension). Optionally, if the experiment was run for a different duration than 1440 min, the length of the experiment in minutes can be passed into analysR as the second argument. analysR's output is a list of 11 elements. Each element can be accessed with the `$` operator (you can also convert the data.frames into data.tables if that eases analysis..). The following explains the different elements computed by analysR:
 
@@ -47,3 +47,6 @@ Once the working directory in RStudio contains the contents of DAM_sleep_paramet
    10. `sleep_end_list` is calculated by the function `DAM_sleep_end.R`, which is also sourced from within `analysR`. Like `DAM_sleep_start`, `DAM_sleep_end` also uses a sliding window of length 2 to slide through each column of `five_min_bouts`. It is important to note how `DAM_sleep_end` calculates the index of sleep end. When the window encounters a transition from 1 to 0, it saves the index of the first 1 plus 4 (due to the nature of what a 1 in `five_min_bouts` represents). E.g., if a fly exhibits a sleep bout of 7 minutes at minute 726, `five_min_bouts` will have 1's at positions 726, 727, and 728. Hence, a transition from 1 to 0 will be noticed by `DAM_sleep_end` when the window is placed over positions 728 and 729. Because the 1 at position 728 in `five_min_bouts` indicates a sleep bout of 5 minutes, the index that is saved by `DAM_sleep_end` is 728 + 4 = 732. Note, again, that there is more information on `DAM_sleep_end` in `DAM_sleep_end.R`.
 
    11. `sleep_bout_length` is calculated by subtracting every element in `sleep_start_list` from every corresponding element in `sleep_end_list`, and adding 1 to the result. Hence, every list element in `sleep_bout_length` is a list itself and corresponds to one channel. This sub-list contains the length of every sleep bout exhibited by a specific fly throughout the course of the whole experiment. To get the corresponding start and end times of each sleep bout, `sleep_start_list` and `sleep_end_list` must be indexed by the same index as the bout is associated with in `sleep_bout_length`.
+
+## DAM_sleep_parameters.R
+
