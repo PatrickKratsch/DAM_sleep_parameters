@@ -17,7 +17,7 @@ DAM_sleep_parameters <- function(analysR_output, xlsx_file, channels = 1:32, day
     light_regime <- analysR_output$light_regime
 
     # Create empty data frame that will be the output, storing 
-    # sleep parameters (28) as rows and channels (=flies) 
+    # sleep parameters (30) as rows and channels (=flies) 
     # as columns
     output <- data.frame(row.names <- c("total_overall_sleep", "total_bouts_overall", 
                                         "onset_first_max_overall", "offset_first_max_overall", 
