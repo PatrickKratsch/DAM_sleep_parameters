@@ -51,30 +51,30 @@ Once the working directory in RStudio contains the contents of DAM_sleep_paramet
 
 ## DAM_sleep_parameters.R
 
-Once the output of `DAM_analysR` has been stored in a variable, this variable can be passed into `sleep_parameters`. The second input argument to `sleep_parameters` is the name of the Excel file that will be written by this function; this name needs to be in double quotes and end with the .xlsx file extension. This Excel file will be written into the working directory; its content is a table where each column indicates a separate channel and each row a different sleep parameter. Note that if only a subset of the 32 channels in a monitor is to be analysed, this can be specified in the third input argument to `sleep_parameters`; the default is channels 1 to 32. Moreover, the length of the experiment is set to 1440 min, but this can also be changed in the fourth input argument. Lastly, `sleep_parameters` can be run for data in light-dark, dark-light, light-light, and dark-dark; in case of light-dark and dark-light, the function will automatically extract the time of transition and use it for downstream calculations. If different photoperiods are to be run (such as 16L:8D), the user has to input the time of transition (theoretical transition) manually as the fifth input argument ('mytransition') to `sleep_parameters`: by default, the value is 721, which represents a theoretical 12:12 pattern. Altogether, there are 30 separate sleep parameters calculated by `DAM_sleep_parameters`, which are listed below. For further explanation of how they are calculated, please consult the R script directly:
+Once the output of `DAM_analysR` has been stored in a variable, this variable can be passed into `sleep_parameters`. The second input argument to `sleep_parameters` is the name of the Excel file that will be written by this function; this name needs to be in double quotes and end with the .xlsx file extension. This Excel file will be written into the working directory; its content is a table where each column indicates a separate channel and each row a different sleep parameter. Note that if only a subset of the 32 channels in a monitor is to be analysed, this can be specified in the third input argument to `sleep_parameters`; the default is channels 1 to 32. Moreover, the length of the experiment is set to 1440 min, but this can also be changed in the fourth input argument. Lastly, `sleep_parameters` can be run for data in light-dark, dark-light, light-light, and dark-dark; in case of light-dark and dark-light, the function will automatically extract the time of transition and use it for downstream calculations. If different photoperiods are to be run (such as 16L:8D), the user has to input the time of transition (theoretical transition) manually as the fifth input argument ('mytransition') to `sleep_parameters`: by default, the value is 721, which represents a theoretical 12:12 pattern. Altogether, there are 30 separate sleep parameters calculated by `DAM_sleep_parameters`, which are listed below. An example call of the function could be `DAM_sleep_parameters(<analysR_output>, '<filename.xlsx', channels = 5:18, days_in_minutes = 1440, mytransition = 481)`. The 30 sleep parameters are explained below:
 
   * `total_overall_sleep` shows the total sleep in minutes for each fly.
-  
+
   * `total_bouts_overall` is the number of (*not* split into day and night phases) sleep bouts throughout the whole experiment.
-  
+
   * `onset_first_max_overall_bout` is the time at which the first overall (no differentiation between light-on and light-off) maximum bout started.
-  
+
   * `offset_first_max_overall_bout` is the time at which this first overall maximum bout ended.
-  
+
   * `length_first_max_overall_bout` is the length of this/these overall maximum bout/s.
-  
+
   * `number_of_max_overall_bouts` is the number of equally long maximum bouts overall.
-  
+
   * `total_day_sleep` is the sum of minutes slept during the day.
-  
+
   * `day_bout_number` is the number of day sleep bouts.
-  
+
   * `onset_first_day` is the time point at which the first sleep bout during the day occurred.
-  
+
   * `offset_first_day` is the time point at which the first sleep bout during the day ended.
-  
+
   * `length_first_day_bout` is the length of the first day sleep bout.
-  
+
   * `onset_first_max_day` is the time point at which the longest sleep bout during the day occurred.
 
   * `offset_first_max_day` is the time point at which the longest day sleep bout ended.
@@ -84,25 +84,25 @@ Once the output of `DAM_analysR` has been stored in a variable, this variable ca
   * `number_of_max_day_bouts` shows how many maximum sleep bouts during the day a fly exhibited; this is relevant if a fly sleeps n > 1 times for a length that represents the longest sleep bout during the day.
 
   * `last_day_offset` shows the end of the last sleep bout during the day.
-  
+
   * `transition_bout` is the number of transition bouts exhibited by a fly. By definition, this can only be 1 or 0.
- 
+
   * `transition_bout_start` is the start time of the transition bout, if present.
-  
+
   * `transition_bout_end` is the time at which the transition bout, if present, ends.
-  
+
   * `transition_bout_length` is the length if the transition bout.
-  
+
   * `total_night_sleep` is the sum in minutes of night sleep.
-  
+
   * `night_bout_number` is the number of sleep bouts during the night.
-  
+
   * `onset_first_night` is the time point at which the first night sleep bout occurred.
 
   * `offset_first_night` is the time point at which the first night sleep bout ended.
 
   * `length_first_night_bout` is the length of the first night sleep bout.
-  
+
   * `onset_first_max_night` is the time at which the first maximum night bout occurred.
 
   * `offset_first_max_night` is the time at which the first maximum night bout ended.
@@ -114,12 +114,8 @@ Once the output of `DAM_analysR` has been stored in a variable, this variable ca
   * `last_night_offset` is the end of the last sleep bout during the night.
 
 
-# A few more words on transition bouts
+# Transition Bout Details
 
-Note that there is a special case when a fly starts sleeping only once during the day, and does not wake up until the light-dark transition. This is dealt with as follows: if this fly started sleeping at least 5 min before the light-dark transition, this bout is counted as a day sleep bout (and potentially also as a night sleep bout, if it lasted for at least 5 min into the dark period, see below), with `onset_first_day` being the start of this bout and `offset_first_day` the time of the light-dark transition. In cases where a fly either did not start sleeping at all during the day, or only did so less than 5 min before the light-dark transition, `onset_first_day` is set equal to the time of the light-dark transition, while `offset_first_day` will be assigned NaN.
+A transition bout is calculated by comparing the number of sleep bout starts to the number of sleep bout ends during the day and night: If the number of sleep bout starts during the day is larger than the number of sleep bout ends during the day, AND if the number of sleep bout ends during the night is larger than the number of sleep bout starts during the night, a transition bout is identified.
 
-A similar special case as described above for day sleep bouts can also occur for night sleep bouts: a fly may start sleeping during the day, and only wake up from this sleep bout during the night (such bouts are from here on called transition bouts). If the night part of a transition bout lasts for at least 5 min, this is counted as a night sleep bout, and `onset_first_night` is set to the time of the light-dark transition, while `offset_first_night` will be the time this transition bout ended. If a fly either did not sleep at all during the night, or only shows a transition bout that lasted less than 5 min during the dark period, `onset_first_night` will be set to the length of the experiment (`days_in_minutes`), and `offset_first_night` will be assigned NaN.
-
-Moreoever, if there is a transition bout whose day part represents a longer duration than any other day bout, the day part of this transition bout will be the maximum day bout. In this case, `onset_first_max_day` is the time this transition bout started, while `offset_first_ma_day` is equal to the time of the light-dark transition. In the rare case where there is a transition bout whose day part is exactly as long as another, previously occurring day sleep bout, `latency_first_max_day` and `offset_first_max_day` will not change, because these parameters refer to the *first* maximum day bout, and the day part of a transition bout, if as long as another maximum day bout, will be the last one occurring during the day, by definition. In this case, only `number_of_max_day_bouts` will be incremented by 1. If there is either no day bout at all, or a transition bout of length less than 5 min, `onset_first_max_day`, `offset_first_max_day`, and `length_first_max_day_bout` are assigned NaN, while `number_of_max_day_bouts` is 0.
-
-Lastly, if there is a transition bout whose night part lasts for a duration longer than the maximum night bout, the night part of this transition bout will be counted as the maximum night bout, with `onset_first_max_night` equal to the time of the light-dark transition, and `offset_first_max_night` equal to the end of this transition bout. Second, because we are calculating the latency and offset of the *first* maximum night bout, in this case such a transition bout, i.e. its night part, will actually be the first bout (not the last as for day bouts). Hence, if the night part of a transition bout exactly as long as the maximum night bout, `onset_first_max_night` and `offset_first_max_night` will refer to this transition bout in the same way as explained above, for cases where the night part of a transition bout is longer than all other maximum night bouts. If there is either no night sleep at all, or only a transition bout whose night part lasts for less than 5 min, `latency_first_max_night`, `offset_first_max_night`, and `length_first_max_night_bout` are assigned NaN, while `number_of_max_night_bouts` is 0.
+If the onset of a transition bout is less than 5 min before light-off, it is not counted as a separate day bout. Similarly, if a transition bout ends less than 5 min after light-off, it is not counted as a separate night bout. If a transition bout starts at least 5 min before light-off AND ends at least 5 min after light-off, the sum of `day_bout_number` and `night_bout_number` equals `total_bouts_overall + 1`. 

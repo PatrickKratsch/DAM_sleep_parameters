@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>README</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); background-color: rgb(40, 44, 52); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); border-image: initial; background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 2px;
+  background-color: rgba(82, 139, 255, 0.24);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #528bff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #2c313a;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #abb2bf;
+}
+.syntax--comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.syntax--comment .syntax--markup.syntax--link {
+  color: #5c6370;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #98c379;
+}
+.syntax--keyword {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--control {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--operator {
+  color: #abb2bf;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #61afef;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #d19a66;
+}
+.syntax--storage {
+  color: #c678dd;
+}
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
+  color: #c678dd;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
+  color: #abb2bf;
+}
+.syntax--constant {
+  color: #d19a66;
+}
+.syntax--constant.syntax--variable {
+  color: #d19a66;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--numeric {
+  color: #d19a66;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #56b6c2;
+}
+.syntax--variable {
+  color: #e06c75;
+}
+.syntax--variable.syntax--interpolation {
+  color: #be5046;
+}
+.syntax--variable.syntax--parameter {
+  color: #abb2bf;
+}
+.syntax--string {
+  color: #98c379;
+}
+.syntax--string.syntax--regexp {
+  color: #56b6c2;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #e5c07b;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #e06c75;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #5c6370;
+}
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #abb2bf;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #61afef;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #be5046;
+}
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
+  color: #abb2bf;
+}
+.syntax--support.syntax--class {
+  color: #e5c07b;
+}
+.syntax--support.syntax--type {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #e06c75;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #d19a66;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #61afef;
+}
+.syntax--meta.syntax--class {
+  color: #e5c07b;
+}
+.syntax--meta.syntax--class.syntax--body {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--definition.syntax--variable {
+  color: #e06c75;
+}
+.syntax--meta.syntax--link {
+  color: #d19a66;
+}
+.syntax--meta.syntax--require {
+  color: #61afef;
+}
+.syntax--meta.syntax--selector {
+  color: #c678dd;
+}
+.syntax--meta.syntax--separator {
+  background-color: #373b41;
+  color: #abb2bf;
+}
+.syntax--meta.syntax--tag {
+  color: #abb2bf;
+}
+.syntax--underline {
+  text-decoration: underline;
+}
+.syntax--none {
+  color: #abb2bf;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.syntax--invalid.syntax--illegal {
+  color: white !important;
+  background-color: #e05252 !important;
+}
+.syntax--markup.syntax--bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #c678dd;
+}
+.syntax--markup.syntax--deleted {
+  color: #e06c75;
+}
+.syntax--markup.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading {
+  color: #e06c75;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #61afef;
+}
+.syntax--markup.syntax--link {
+  color: #56b6c2;
+}
+.syntax--markup.syntax--inserted {
+  color: #98c379;
+}
+.syntax--markup.syntax--quote {
+  color: #d19a66;
+}
+.syntax--markup.syntax--raw {
+  color: #98c379;
+}
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
+  color: #828997;
+}
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--source.syntax--embedded.syntax--source {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--constant.syntax--language,
+.syntax--source.syntax--elixir .syntax--constant.syntax--numeric,
+.syntax--source.syntax--elixir .syntax--constant.syntax--definition {
+  color: #61afef;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--definition,
+.syntax--source.syntax--elixir .syntax--variable.syntax--anonymous {
+  color: #c678dd;
+}
+.syntax--source.syntax--elixir .syntax--quoted {
+  color: #98c379;
+}
+.syntax--source.syntax--elixir .syntax--keyword.syntax--special-method,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--section,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--source.syntax--empty {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--readwrite.syntax--module .syntax--punctuation {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--regexp.syntax--section,
+.syntax--source.syntax--elixir .syntax--regexp.syntax--string {
+  color: #be5046;
+}
+.syntax--source.syntax--elixir .syntax--separator,
+.syntax--source.syntax--elixir .syntax--keyword.syntax--operator {
+  color: #d19a66;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--constant {
+  color: #e5c07b;
+}
+.syntax--source.syntax--elixir .syntax--array,
+.syntax--source.syntax--elixir .syntax--scope,
+.syntax--source.syntax--elixir .syntax--section {
+  color: #828997;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
+  color: #61afef;
+}
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
+  color: #c678dd;
+}
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
+  color: #e06c75;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--type {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
+  color: #c678dd;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
+  color: #e06c75;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
+  color: #abb2bf;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #c678dd;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
+  color: #98c379;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
+  color: #56b6c2;
+}
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
+  color: inherit;
+}
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
+  color: #c678dd;
+}
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="dam_sleep_parameters">DAM_sleep_parameters</h1>
+<p><em>Author: Patrick Krätschmer</em></p>
+<h2 id="introduction">Introduction</h2>
+<p>This repository contains work in progress on an R-based analysis package for the Drosophila Activity Monitor (DAM) system.</p>
+<p>In order to run it, R needs to be installed on the local computer, and preferably RStudio as an IDE:</p>
+<ol>
+<li><p>Download R</p>
+<ul>
+<li>R can be downloaded from CRAN: <a href="https://cran.r-project.org/">https://cran.r-project.org/</a> Simply follow the instructions (and note that XQuartz is needed for Mac users).</li>
+</ul>
+</li>
+<li><p>Download RStudio</p>
+<ul>
+<li>RStudio can be downloaded from: <a href="https://www.rstudio.com/">https://www.rstudio.com/</a></li>
+</ul>
+</li>
+</ol>
+<p>Once R and RStudio are installed on the local computer, there are three (so far) extra packages that need to be installed before using DAM_analysR:</p>
+<ul>
+<li>xlsx</li>
+<li>plyr</li>
+<li>dplyr</li>
+</ul>
+<p>To install these packages, and any other, type <code>install.packages(&quot;&lt;packagename&gt;&quot;)</code> into the console in RStudio. Once this is done, start a new R project in RStudio, which sets the working directory to be the new RProject directory. Now the DAM_analysR GitHub repository can be downloaded and all its contents be copied into that RProject directory on the local computer; alternatively, the remote repo (DAM_sleep_parameters) can be forked and set as the working directory in RStudio.</p>
+<p>Once the working directory in RStudio contains the contents of DAM_sleep_parameters, the analysis of DAM raw output data can begin. First, run the raw data from the DAM through DAM FileScan; The output files from this need to be copied into the RStudio working directory. Second, source analysR.R by <code>source(&quot;analysR.R&quot;)</code>. Third, run analysR with the name of the raw DAM FileScan output file as the first argument, and the length of the experiment in minutes as the second argument (the default experiment duration is 1440 min, i.e. one day). Store the output of analysR in a variable. Lastly, use this variable as input to DAM_sleep_parameters, and write the output as an Excel file into the working directory.</p>
+<h2 id="dam_analysr-r">DAM_analysR.R</h2>
+<p><code>analysR.R</code> is the base function used to work through the DAM FileScan output. Its first input is the DAM FileScan output, which is a text file (don&#39;t forget quotation marks and file extension). Optionally, if the experiment was run for a different duration than 1440 min, the length of the experiment in minutes can be passed into analysR as the second argument. analysR&#39;s output is a list of 11 elements. Each element can be accessed with the <code>$</code> operator (you can also convert the data.frames into data.tables if that eases analysis..). The following explains the different elements computed by analysR:</p>
+<ol>
+<li><p><code>light_regime</code> is a list of 1&#39;s and 0&#39;s, where 1 indicates light-on, and 0 light-off. Its length is specified by the <code>days_in_minutes</code> argument to <code>analysR</code>. Hence, each element of the <code>light_regime</code> vector indicates whether during a given minute of the experiment the light was switched on or off.</p>
+</li>
+<li><p><code>transitions</code> is calculated by <code>light_dark_transitions.R</code>, which is sourced from within analysR. This function takes two arguments, <code>light_regime</code> and <code>days_in_minutes</code>. It walks through light_regime until it encounters a transition from 0 to 1 or vice versa, and stores the index of that transition in two separate vectors, one for dark-light transitions, and one for light-dark transitions, respectively. Note that the minute of transition stored is always the 1, i.e. for light-dark transitions, the last minute in <code>light_regime</code> associated with a 1 is stored, while for dark-light transitions, the first minute associated with a 1 is stored. This is because even if the lights were on for just 1 s during a whole 1 min bin, in the DAM raw data, this minute will be associated with a 1. Hence, by storing the indices of the 1&#39;s, we know that for light-dark transitions, this was definitely the last minute during which the lights were on, while for dark-light transitions, this was definitely the first minute during which the lights were on.</p>
+</li>
+<li><p><code>DAM_raw</code> is the raw output from the DAM system, which is exactly the content of the text file you pass into <code>analysR</code> as the first argument.</p>
+</li>
+<li><p><code>DAM_raw_clean</code> extracts columns 12 to 44 (or columns 10 to 42, depending on date parsing) from <code>DAM_raw</code>, which corresponds to the light regime (column 12 of <code>DAM_raw</code>), and the beam crosses per minute for each channel (32 channels in total, resulting in 33 columns). This is done because the first 11 columns are not used for downstream analyses.</p>
+</li>
+<li><p><code>DAM_raw_clean2</code> binds an extra row of 1&#39;s to the beginning of <code>DAM_raw_clean</code>, which is important for later calculations of sleep episodes: These are calculated in part by finding a transition from activity to inactivity: If a fly was inactive for 5 min at the start of the experiment, this can only be interpreted as sleep if we add a row of pseudo-activity to the beginning of each channel. Note that this does not mean anything biologically, it&#39;s just to allow for proper calculation. In addition, <code>DAM_raw_clean2</code> has the first column removed, which is stored in the vector <code>light_regime</code> as stated above, and not carried forward for downstream calculations.</p>
+</li>
+<li><p><code>DAM_raw_clean3</code> has an additional column added to the start of <code>DAM_raw_clean2</code>, which contains a sequence of numbers from 0 to <code>days_in_minutes</code>, the second input argument to <code>analysR</code>. This is done to index every row in <code>DAM_raw_clean3</code>.</p>
+</li>
+<li><p><code>analogue_to_binary</code> takes <code>DAM_raw_clean3[, 2:33]</code> (because the first column, <code>days_in_minutes</code>, is not used for this calculation), and transforms any 0 in the data frame into a 1, and any non-0 into a 0. Hence, every minute of inactivity is now represented by a 1, while every minute during which the fly crossed the infrared beam at least once is represented by a 0. This makes <code>analogue_to_binary</code> an inactivity representation. Note that <code>days_in_minutes</code> is appended as the first column in <code>analogue_to_binary</code> after the above calculation is done, so <code>analogue_to_binary</code> has 33 columns.</p>
+</li>
+<li><p><code>five_min_bouts</code> is calculated via the function <code>DAM_sleep_define.R</code> (<code>DAM_sleep_define.R</code> must be in the working directory). This function is sourced from within <code>analysR</code>. <code>DAM_sleep_define</code> runs through every column of <code>analogue_to_binary</code> (again, except the first one, which is <code>days_in_minutes</code>), and looks for five consecutive 1&#39;s, i.e. periods of five minutes of inactivity. It does so via a sliding window of length 5, for every column of <code>analogue_to_binary</code> from the first row to the fourth-last row (the window would otherwise exceed the length of the column). Whenever it finds a window of five consecutive 1&#39;s, it saves a 1 at the position 1 of the sliding window in <code>five_min_bouts</code>. E.g., if a fly didn&#39;t cross the infrared beam between minutes 223 and 227, a 1 is put at position 223 in <code>five_min_bouts</code>. As a result, <code>five_min_bouts</code> will consist of 0&#39;s and 1&#39;s, with every 1 indicating that at this moment in time during the experiment (e.g. at minute 223), the fly didn&#39;t move for five consecutive minutes, i.e. it neither moved during this minute (e.g. minute 223), nor during the next four, indicating a period of five minutes of inactivity. If this is interpreted as a single sleep bout, then <code>five_min_bouts</code> is a data.frame where every 1 indicates the beginning of a five minute sleep bout (which is how this data.frame got its name). E.g., a nine minute sleep bout in <code>five_min_bouts</code> would be represented by five 1&#39;s in a row, a 300 min sleep bout by 296 1&#39;s in a row, an n min sleep bout by (n - 4) 1&#39;s in a row, with n &gt;= 5.</p>
+</li>
+<li><p><code>sleep_start_list</code> is calculated by the function <code>DAM_sleep_start.R</code>, which is sourced from within <code>analysR</code>. <code>DAM_sleep_start</code> uses a sliding window of length 2 to slide down each column of <code>five_min_bouts</code>. Every time it encounters a transition from 0 to 1, it identifies this as the start of a sleep episode, and saves the index of the 1 in a vector. The output is a list of vectors, where each vector contains the indices of sleep starts for one channel (i.e. one fly) for the course of the whole experiment (defined by <code>days_in_minutes</code> in <code>analysR</code>). Note that there is more explanation on how <code>DAM_sleep_start</code> works as a commentary in <code>DAM_sleep_start.R</code>.</p>
+</li>
+<li><p><code>sleep_end_list</code> is calculated by the function <code>DAM_sleep_end.R</code>, which is also sourced from within <code>analysR</code>. Like <code>DAM_sleep_start</code>, <code>DAM_sleep_end</code> also uses a sliding window of length 2 to slide through each column of <code>five_min_bouts</code>. It is important to note how <code>DAM_sleep_end</code> calculates the index of sleep end. When the window encounters a transition from 1 to 0, it saves the index of the first 1 plus 4 (due to the nature of what a 1 in <code>five_min_bouts</code> represents). E.g., if a fly exhibits a sleep bout of 7 minutes at minute 726, <code>five_min_bouts</code> will have 1&#39;s at positions 726, 727, and 728. Hence, a transition from 1 to 0 will be noticed by <code>DAM_sleep_end</code> when the window is placed over positions 728 and 729. Because the 1 at position 728 in <code>five_min_bouts</code> indicates a sleep bout of 5 minutes, the index that is saved by <code>DAM_sleep_end</code> is 728 + 4 = 732. Note, again, that there is more information on <code>DAM_sleep_end</code> in <code>DAM_sleep_end.R</code>.</p>
+</li>
+<li><p><code>sleep_bout_length</code> is calculated by subtracting every element in <code>sleep_start_list</code> from every corresponding element in <code>sleep_end_list</code>, and adding 1 to the result. Hence, every list element in <code>sleep_bout_length</code> is a list itself and corresponds to one channel. This sub-list contains the length of every sleep bout exhibited by a specific fly throughout the course of the whole experiment. To get the corresponding start and end times of each sleep bout, <code>sleep_start_list</code> and <code>sleep_end_list</code> must be indexed by the same index as the bout is associated with in <code>sleep_bout_length</code>.</p>
+</li>
+</ol>
+<h2 id="dam_sleep_parameters-r">DAM_sleep_parameters.R</h2>
+<p>Once the output of <code>DAM_analysR</code> has been stored in a variable, this variable can be passed into <code>sleep_parameters</code>. The second input argument to <code>sleep_parameters</code> is the name of the Excel file that will be written by this function; this name needs to be in double quotes and end with the .xlsx file extension. This Excel file will be written into the working directory; its content is a table where each column indicates a separate channel and each row a different sleep parameter. Note that if only a subset of the 32 channels in a monitor is to be analysed, this can be specified in the third input argument to <code>sleep_parameters</code>; the default is channels 1 to 32. Moreover, the length of the experiment is set to 1440 min, but this can also be changed in the fourth input argument. Lastly, <code>sleep_parameters</code> can be run for data in light-dark, dark-light, light-light, and dark-dark; in case of light-dark and dark-light, the function will automatically extract the time of transition and use it for downstream calculations. If different photoperiods are to be run (such as 16L:8D), the user has to input the time of transition (theoretical transition) manually as the fifth input argument (&#39;mytransition&#39;) to <code>sleep_parameters</code>: by default, the value is 721, which represents a theoretical 12:12 pattern. Altogether, there are 30 separate sleep parameters calculated by <code>DAM_sleep_parameters</code>, which are listed below. For further explanation of how they are calculated, please consult the R script directly:</p>
+<ul>
+<li><p><code>total_overall_sleep</code> shows the total sleep in minutes for each fly.</p>
+</li>
+<li><p><code>total_bouts_overall</code> is the number of (<em>not</em> split into day and night phases) sleep bouts throughout the whole experiment.</p>
+</li>
+<li><p><code>onset_first_max_overall_bout</code> is the time at which the first overall (no differentiation between light-on and light-off) maximum bout started.</p>
+</li>
+<li><p><code>offset_first_max_overall_bout</code> is the time at which this first overall maximum bout ended.</p>
+</li>
+<li><p><code>length_first_max_overall_bout</code> is the length of this/these overall maximum bout/s.</p>
+</li>
+<li><p><code>number_of_max_overall_bouts</code> is the number of equally long maximum bouts overall.</p>
+</li>
+<li><p><code>total_day_sleep</code> is the sum of minutes slept during the day.</p>
+</li>
+<li><p><code>day_bout_number</code> is the number of day sleep bouts.</p>
+</li>
+<li><p><code>onset_first_day</code> is the time point at which the first sleep bout during the day occurred.</p>
+</li>
+<li><p><code>offset_first_day</code> is the time point at which the first sleep bout during the day ended.</p>
+</li>
+<li><p><code>length_first_day_bout</code> is the length of the first day sleep bout.</p>
+</li>
+<li><p><code>onset_first_max_day</code> is the time point at which the longest sleep bout during the day occurred.</p>
+</li>
+<li><p><code>offset_first_max_day</code> is the time point at which the longest day sleep bout ended.</p>
+</li>
+<li><p><code>length_first_max_day_bout</code> is the length of this/these maximum day sleep bout/s.</p>
+</li>
+<li><p><code>number_of_max_day_bouts</code> shows how many maximum sleep bouts during the day a fly exhibited; this is relevant if a fly sleeps n &gt; 1 times for a length that represents the longest sleep bout during the day.</p>
+</li>
+<li><p><code>last_day_offset</code> shows the end of the last sleep bout during the day.</p>
+</li>
+<li><p><code>transition_bout</code> is the number of transition bouts exhibited by a fly. By definition, this can only be 1 or 0.</p>
+</li>
+<li><p><code>transition_bout_start</code> is the start time of the transition bout, if present.</p>
+</li>
+<li><p><code>transition_bout_end</code> is the time at which the transition bout, if present, ends.</p>
+</li>
+<li><p><code>transition_bout_length</code> is the length if the transition bout.</p>
+</li>
+<li><p><code>total_night_sleep</code> is the sum in minutes of night sleep.</p>
+</li>
+<li><p><code>night_bout_number</code> is the number of sleep bouts during the night.</p>
+</li>
+<li><p><code>onset_first_night</code> is the time point at which the first night sleep bout occurred.</p>
+</li>
+<li><p><code>offset_first_night</code> is the time point at which the first night sleep bout ended.</p>
+</li>
+<li><p><code>length_first_night_bout</code> is the length of the first night sleep bout.</p>
+</li>
+<li><p><code>onset_first_max_night</code> is the time at which the first maximum night bout occurred.</p>
+</li>
+<li><p><code>offset_first_max_night</code> is the time at which the first maximum night bout ended.</p>
+</li>
+<li><p><code>length_first_max_night_bout</code> represents the lengths of this/these maximum night bout/s.</p>
+</li>
+<li><p><code>number_of_max_night_bouts</code> shows how many equally long maximum night sleep bouts occurred.</p>
+</li>
+<li><p><code>last_night_offset</code> is the end of the last sleep bout during the night.</p>
+</li>
+</ul>
+<h1 id="a-few-more-words-on-transition-bouts">A few more words on transition bouts</h1>
+<p>Note that there is a special case when a fly starts sleeping only once during the day, and does not wake up until the light-dark transition. This is dealt with as follows: if this fly started sleeping at least 5 min before the light-dark transition, this bout is counted as a day sleep bout (and potentially also as a night sleep bout, if it lasted for at least 5 min into the dark period, see below), with <code>onset_first_day</code> being the start of this bout and <code>offset_first_day</code> the time of the light-dark transition. In cases where a fly either did not start sleeping at all during the day, or only did so less than 5 min before the light-dark transition, <code>onset_first_day</code> is set equal to the time of the light-dark transition, while <code>offset_first_day</code> will be assigned NaN.</p>
+<p>A similar special case as described above for day sleep bouts can also occur for night sleep bouts: a fly may start sleeping during the day, and only wake up from this sleep bout during the night (such bouts are from here on called transition bouts). If the night part of a transition bout lasts for at least 5 min, this is counted as a night sleep bout, and <code>onset_first_night</code> is set to the time of the light-dark transition, while <code>offset_first_night</code> will be the time this transition bout ended. If a fly either did not sleep at all during the night, or only shows a transition bout that lasted less than 5 min during the dark period, <code>onset_first_night</code> will be set to the length of the experiment (<code>days_in_minutes</code>), and <code>offset_first_night</code> will be assigned NaN.</p>
+<p>Moreoever, if there is a transition bout whose day part represents a longer duration than any other day bout, the day part of this transition bout will be the maximum day bout. In this case, <code>onset_first_max_day</code> is the time this transition bout started, while <code>offset_first_ma_day</code> is equal to the time of the light-dark transition. In the rare case where there is a transition bout whose day part is exactly as long as another, previously occurring day sleep bout, <code>latency_first_max_day</code> and <code>offset_first_max_day</code> will not change, because these parameters refer to the <em>first</em> maximum day bout, and the day part of a transition bout, if as long as another maximum day bout, will be the last one occurring during the day, by definition. In this case, only <code>number_of_max_day_bouts</code> will be incremented by 1. If there is either no day bout at all, or a transition bout of length less than 5 min, <code>onset_first_max_day</code>, <code>offset_first_max_day</code>, and <code>length_first_max_day_bout</code> are assigned NaN, while <code>number_of_max_day_bouts</code> is 0.</p>
+<p>Lastly, if there is a transition bout whose night part lasts for a duration longer than the maximum night bout, the night part of this transition bout will be counted as the maximum night bout, with <code>onset_first_max_night</code> equal to the time of the light-dark transition, and <code>offset_first_max_night</code> equal to the end of this transition bout. Second, because we are calculating the latency and offset of the <em>first</em> maximum night bout, in this case such a transition bout, i.e. its night part, will actually be the first bout (not the last as for day bouts). Hence, if the night part of a transition bout exactly as long as the maximum night bout, <code>onset_first_max_night</code> and <code>offset_first_max_night</code> will refer to this transition bout in the same way as explained above, for cases where the night part of a transition bout is longer than all other maximum night bouts. If there is either no night sleep at all, or only a transition bout whose night part lasts for less than 5 min, <code>latency_first_max_night</code>, <code>offset_first_max_night</code>, and <code>length_first_max_night_bout</code> are assigned NaN, while <code>number_of_max_night_bouts</code> is 0.</p></body>
+</html>
