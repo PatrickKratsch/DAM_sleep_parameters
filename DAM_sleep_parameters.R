@@ -425,7 +425,7 @@ I will use 721. If this is incorrect, please check analysR_output$transitions fo
 
         # Number of bouts that spanned over light/dark transition.
         total_bouts_overall <- length(sleep_bout_length)
-        if(total_bouts_overall != (day_bout_number + night_bout_number)){
+        if(length(sleep_start_list_day) > length(sleep_end_list_day) && length(sleep_end_list_night) > length(sleep_start_list_night){
 
             transition_bout <- TRUE
         }
